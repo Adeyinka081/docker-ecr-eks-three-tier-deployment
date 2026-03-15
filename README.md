@@ -3,6 +3,10 @@
 This project demonstrates how to deploy a containerized web application on AWS using Kubernetes.
 
 ## Architecture
+## Architecture Diagram
+
+![Architecture](diagrams/architecture.png)
+
 
 Docker → Amazon ECR → Amazon EKS → Kubernetes → LoadBalancer → Public Website
 
