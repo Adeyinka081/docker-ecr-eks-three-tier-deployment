@@ -1,0 +1,48 @@
+# Default values for three-tier-chart
+
+replicaCount: 1
+
+image:
+  repository: 466825169861.dkr.ecr.us-east-1.amazonaws.com/three-tier-app
+  pullPolicy: IfNotPresent
+  tag: latest
+
+imagePullSecrets:
+  - name: ecr-pull-secret
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+securityContext: {}
+
+service:
+  type: LoadBalancer
+  port: 80
+
+ingress:
+  enabled: false
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
